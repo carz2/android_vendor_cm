@@ -28,7 +28,6 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh
 
 PRODUCT_COPY_FILES +=  \
-    vendor/cm/proprietary/RomManager.apk:system/app/RomManager.apk \
     vendor/cm/prebuilt/common/bootanimation.zip:system/media/bootanimation.zip
   	
 
@@ -65,15 +64,3 @@ PRODUCT_VERSION_MAINTENANCE = 0-RC0
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=ITL41D
 
-ifdef CM_NIGHTLY
-    PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-$(PRODUCT_VERSION_MAJOR)-$(shell date +%m%d%Y)-NIGHTLY-$(PRODUCT_RELEASE_NAME)
-else
-    ifdef CM_RELEASE
-        PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CyanogenMod-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)
-    else
-        PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CyanogenMod-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)-KANG
-    endif
-endif
