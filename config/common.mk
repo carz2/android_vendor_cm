@@ -1,12 +1,7 @@
-PRODUCT_BRAND ?= cyanogenmod
+PRODUCT_BRAND ?= carz2
 
-ifdef CM_NIGHTLY
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
-endif
+    ro.rommanager.developerid=carz2
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -63,4 +58,7 @@ PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE = 0-RC0
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=ITL41D
+
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.modversion=Carz-AOSP-ICS-$(shell date +%m%d%Y)-$(PRODUCT_RELEASE_NAME)
 
