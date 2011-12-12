@@ -141,9 +141,9 @@ rm -rf $REPACK/ota/recovery
 
 # Determine what to name the new signed package
 if [ -z "$CYANOGEN_NIGHTLY" ]; then
-	MODVERSION=`sed -n -e'/ro\.modversion/s/^.*CyanogenMod-//p' $REPACK/ota/system/build.prop`
+	MODVERSION=`sed -n -e'/ro\.modversion/s/^.*Carz-//p' $REPACK/ota/system/build.prop`
 	: ${MODVERSION:=nightly}
-	OUTFILE=$OUT/update-cm-$MODVERSION-signed.zip
+	OUTFILE=$OUT/update-carz-$MODVERSION-signed.zip
 else
 	OUTFILE=$OUT/update-squished.zip
 fi
